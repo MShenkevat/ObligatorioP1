@@ -1,0 +1,28 @@
+body {
+    height: 100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-family: Acumin pro;
+    background-color: #C84734;
+    color: white;
+    font-size: 20px;
+    height: 55px;
+}
+
+p:first-of-type {
+    padding: 15px 0px 0px 20px !important;
+}
+
+
+
+header > p {
+    margin: 0.5%;
+    display: inline-block!important;
+    vertical-align: middle!important;
+    height: 100%!important;
+    padding: 15px 0px 0px!important;
+}

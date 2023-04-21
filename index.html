@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    </head>
+    <body>
+
+    <!--INICIO SESION Y NUEVO USUARIO-->    
+    <div id="seccionInicioSesion">
+        <header>
+            <p class="tablinks"  style="display: inline;">
+                Montesur Transporte
+            </p>
+        </header>
+        <h1>Inicio Sesión</h1>
+        <form method="post" >
+            <label for="txtUsuarioImportador">Ingrese su usuario</label><br>
+            <input type="text" id="txtUsuarioImportador"><br><br>
+            <label for="txtContraseñaImportador">Ingrese contraseña</label><br>
+            <input type="password" id="txtContraseñaImportador"><br><br>
+            <p id="mensajeErrorInicioSesionContrasena" ></p>
+            <button type="button" id="buttonInicioSesion">Ingresar</button><br><br>
+            <button type="button" id="buttonRegistrarImportador">Registrar Importador</button><br>
+        </form>
+    </div>
+    
+
+    <div id="seccionUsuarioNuevo">
+        <h1>Crear usuario</h1>
+        <form>
+            <label>Nombre</label><br>
+            <input type="text" id="ingresoNombre"><br><br>
+            <p id="errorNombre" ></p>
+            <label>Nombre de usuario</label><br>
+            <input type="text" id="ingrsoNombreUsuario"><br><br>
+            <p id="errorNombreUsuario"></p>
+            <label>Contraseña</label><br>
+            <input type="password" id="ingresoPassword"><br><br>
+            <p id="errorPassword"></p>
+            <button type="button" id="buttonRegistro">Registrarme</button>
+        </form>
+    </div>
+
+    <!--IMPORTADOR-->
+
+    <div id="seccionCrearNuevaSolicitud">
+        <header>
+            <p class="tablinks"  style="display: inline;">
+                Montesur Transporte
+            </p>
+            <p class="tablinks"  style="display: inline;" id="irCalendarioUno">
+                Calendario Viajes
+            </p>
+            <p class="tablinks"  style="display: inline;" id="irEstadisticaUno">
+                Información estadística
+            </p>
+        </header>
+        <h1>Crear nueva solicitud</h1>
+        <form>
+            <!--<label>id importador</label>
+            <input type="text" id="ingresoIdImportador"><br><br>-->
+
+            <label for="tipoMercaderia">Tipo de mercadería</label>
+                <select id="tipoMercaderia"><br>
+                    <option value="CARGA_GENERAL">CARGA_GENERAL</option>
+                    <option value="REFRIGERADO">REFRIGERADO</option>
+                    <option value="CARGA_PELIGROSA">CARGA_PELIGROSA</option>
+                </select><br><br>
+
+            <label>Descripción</label>
+            <input type="text" id="descripcionMercaderia"><br><br>
+
+            <label>Puerto de origen</label>
+            <input type="text" id="ingresoPuertoDeOrigen"><br><br>
+            
+            <label for="cantidadContenedores">Cantidad de contenedores</label>
+                <select id="cantidadContenedores">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <p id="mensajeErrorCrearSolicitud" ></p>
+                <button type="button" id="buttonCrearSolicitud">Crear solicitud</button><br><br>
+                <button type="button" id="buttonVerMisSolicitudes">Ver mis solicitudes pendientes</button>
+        </form>
+    </div>
+
+    <div  id="seccionSolicitudesPendientes">
+        <header>
+            <p class="tablinks"  style="display: inline;">
+                Montesur Transporte
+            </p>
+            <p class="tablinks"  style="display: inline;" id="irCalendarioDos">
+                Calendario Viajes
+            </p>
+            <p class="tablinks"  style="display: inline;" id="irEstadisticaDos">
+                Información estadística
+            </p>
+        </header>
+        <h1>Mis solicitudes pendientes</h1>
+        <form>
+            <label>Ingrese descripción de mercadería</label>
+            <input type="text" id="buscadorSolicitudes">
+            <button type="button" id="bttnBuscadorSolicitudesPendientes">Buscar</button>
+            <button type="button" id="buttonMostrarTodasSolicitudes" value="mostrarSolicitudes">Mostrar</button>
+        </form>
+        <p id="mostrarTablaSolicitudesPendientes"></p>
+
+        <h3>Cancelar solicitudes</h3>
+        <label for="cancelacionSolicitudes">Solicitudes a cancelar</label>
+                    <select id="cancelacionSolicitudes">
+                    </select><br><br>
+                    <button type="button" value="Cancelar" id="cancelarSolicitud">Cancelar</button>
+    </div>
+
+    <div id="seccionCalendario">
+        <header>
+            <p class="tablinks"  style="display: inline;">
+                Montesur Transporte
+            </p>
+            <p class="tablinks"  style="display: inline;" id="irCrearSolicitudes">
+                Crear Solicitud
+            </p>
+            <p class="tablinks"  style="display: inline;" id="irEstadisticaTres">
+                Información estadística
+            </p>
+        </header><br><br>
+        <h1>Calendario Viajes</h1>
+        <p id="mostrarCalendario"></p>
+    </div>
+    
+    <div id="seccionEstadistica">
+        <header>
+            <p class="tablinks"  style="display: inline;">
+                Montesur Transporte
+            </p>
+            <p class="tablinks"  style="display: inline;" id="irCrearSolicitudesDos">
+                Crear Solicitud
+            </p>
+            <p class="tablinks"  style="display: inline;" id="irCalendarioTres">
+                Calendario Viajes
+            </p>
+        </header><br>
+        <h1>Información Estadística</h1>
+        <h3>Porcentaje de cancelaciones contra el total de cargas</h3>
+        <p id="pPorcentajeCancelacionesTotalCargas"></p>
+
+        <h1>Participación Lineas de Carga en Solicitudes</h1>
+        <p id="pTablaParticipacion"></p>
+    </div>
+
+
+    <!--EMPRESA-->
+    <div  id="seccionInicioEmpresa">
+        <header>
+            <p class="tablinks"  style="display: inline;">
+                Montesur Transporte
+            </p>
+            <p class="tablinks"  style="display: inline;" id="btnirImportadores">
+                Importadores
+            </p>
+            <p class="tablinks"  style="display: inline;" id="btnIrAsignarSolicitudViaje">
+                Solicitudes
+            </p>
+        </header>
+        <h1>Crear nuevo viaje (Buque)</h1>
+        <form>
+            <label>Nombre de Buque</label>
+            <input type="text" id="nombreDeBuque"><br><br>
+            
+            <label for="maxContenedores">Max contenedores</label>
+                <select id="selectMaxContenedores"><br>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+
+                Fecha
+                <input type="date" id="txtFechaBuque">
+                <p id="msgErrorBuque"></p>
+
+            <button type="button" id="botonCrearViajeBuque">Crear</button>
+        </form>
+                
+    </div>
+
+    <div id="seccionAsignarSolicitudes">
+        <header>
+            <p class="tablinks"  style="display: inline;">
+                Montesur Transporte
+            </p>
+            <p class="tablinks"  style="display: inline;" id="btnIrDeAsigACrear">
+                Crear Viaje
+            </p>
+            <!--p class="tablinks"  style="display: inline;">
+                Solicitudes
+            </p-->
+        </header>
+        <h1>Asignar solicitud</h1>
+        <form>
+            <label for="AsignacionSolicitudes">Solicitudes</label>
+                <select id="AsignacionSolicitudes"><br>
+                </select><br><br>
+
+            <label for="AsignacionViajes">Viajes</label>
+                <select id="AsignacionViajes"><br>
+                </select><br>              
+        </form><br>
+        <p id="msgErrorAsignacionSolicitudViaje"></p>
+        <button type="button" id="bttnAsignar" >Asignar</button>
+
+        <h1>Rollover de Carga</h1>
+        <form>
+            <label for="solicitudesYaAsignadas">Solicitudes ya Asignadas</label>
+                <select id="solicitudesYaAsignadas"><br>
+                </select><br><br>
+
+            <label for="ViajesBuque">Viaje Nuevo</label>
+                <select id="ViajesBuque"><br>
+                </select><br>  
+        </form><br>
+        <p id="msgErrorRolloverSolicitudViaje"></p>
+        <button type="button" id="bttnRollover">Reasignar</button>
+        
+        <h1>Manifesto de carga</h1>
+        <form>
+            <label for="viajesManifesto">Lineas de Carga</label>
+                <select id="viajesManifesto"><br>
+                </select><br>
+        </form><br>
+        <button type="button" id="bttnCargarManifesto">Ver Manifesto de Carga</button>
+        <p id="mostrarManifestoCarga"></p>
+
+        <h1>Listado cargas peligrosas</h1>
+        <form>
+            <label for="cargasPeligrosas">Lineas de Carga</label>
+                <select id="cargasPeligrosas"><br>
+                </select><br>
+        </form><br>
+        <button type="button" id="bttnCargaPeligrosa">Ver Cargas Peligrosas</button>
+        <p id="mostrarCargasPeligrosas"></p>
+    </div>
+
+    <div id="seccionHabilitarImportadores" >
+        <header>
+            <p class="tablinks"  style="display: inline;">
+                Montesur Transporte
+            </p>
+            <p class="tablinks"  style="display: inline;" id="btnIrDeImpoACrear">
+                Crear Viaje
+            </p>
+        </header>
+        <h1>Habilitar Importadores</h1>
+        <form>
+            <label for="solicitudesCanceladas">Solicitudes Canceladas</label>
+                <select id="solicitudesCanceladas"><br>
+                </select><br>
+        </form><br>
+        <button type="button" id="bttnIgnorarSolicitud">Ignorar Solicitud Cancelada</button>
+    </div>
+
+</body>
+    <script  src="app.js"></script>
+</html>
+
